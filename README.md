@@ -32,7 +32,7 @@ bm -f "index.html" -d ./testDir -p ./publicPath
 
 ```bash
   -v, --version            output the version number
-  -d --directory [value]   entry directory (default: /Users/xyzhang/webstudy/bookmark/bin)
+  -d --directory [value]   entry directory (default: __dirname)
   -f --filename [value]    output file name (default: index.html)
   -p --publicPath [value]  output public path (default: ..)
   -h, --help               output usage information
