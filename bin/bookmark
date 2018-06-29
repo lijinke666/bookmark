@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+'use strict';
+
+const path = require('path');
+const program = require('commander');
+const { version, description } = require('../package.json');
+const { createBookmark } = require('../lib');
+
+process.env.NODE_PATH = path.resolve(__dirname, '/../node_modules/');
+
+program
+  .version(version, '-v, --version')
+  .usage('[options]')
+  .option('-d --directory [value]', 'entry directory', __dirname)
+  .option('-f --filename [value]', 'output file name', 'index.html')
+  .option('-p --publicPath [value]', 'output public path', '..')
+  .parse(process.argv);
+
+const { directory, filename, publicPath } = program;
+
+createBookmark({
+  entry: directory,
+  output: filename,
+  publicPath
+});
