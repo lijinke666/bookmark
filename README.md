@@ -4,7 +4,6 @@
 [![npm version](https://img.shields.io/npm/v/bookmask.svg?style=flat-square)](https://badge.fury.io/js/bookmask)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://www.npmjs.com/package/bookmask)
 
-<img src="https://github.com/lijinke666/bookmask/blob/master/logo.png" width="100"/>
 
 :closed_book: generator bookmark form the directory
 
@@ -26,13 +25,17 @@ $ [bm | bookmark] <command>
 ## Example
 
 ```
+bm -f "index.html" -d ./testDir -p ./publicPath
 ```
 
 ## Commands
 
 ```bash
- -V, --version  output the version number
- -h, --help     output usage information
+  -v, --version            output the version number
+  -d --directory [value]   entry directory (default: /Users/xyzhang/webstudy/bookmark/bin)
+  -f --filename [value]    output file name (default: index.html)
+  -p --publicPath [value]  output public path (default: ..)
+  -h, --help               output usage information
 ```
 
 ## Development
