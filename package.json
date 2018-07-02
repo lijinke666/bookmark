@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/lijinke666/bookmark#README.md",
   "dependencies": {
+    "chalk": "^2.4.1",
     "commander": "^2.14.1"
   },
   "devDependencies": {

@@ -11,15 +11,15 @@ process.env.NODE_PATH = path.resolve(__dirname, '/../node_modules/');
 program
   .version(version, '-v, --version')
   .usage('[options]')
-  .option('-d --directory [value]', 'entry directory', __dirname)
-  .option('-f --filename [value]', 'output file name', 'index.html')
+  .option('-d --directory [value]', 'entry directory',__dirname)
+  .option('-o --output [value]', 'output directory', path.resolve(__dirname,'index.html'))
   .option('-p --publicPath [value]', 'output public path', '..')
   .parse(process.argv);
 
-const { directory, filename, publicPath } = program;
+const { directory, publicPath,output } = program;
 
 createBookmark({
   entry: directory,
-  output: filename,
+  output,
   publicPath
 });
