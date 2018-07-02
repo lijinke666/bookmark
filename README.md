@@ -12,7 +12,7 @@ For example, there are many HTML pages in the folder, use bookmark build `index.
 ## Installation
 
 ```
-npm install bookmark -g
+npm install j-bookmark -g
 ```
 
 ## Usage
