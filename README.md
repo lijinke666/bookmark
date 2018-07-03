@@ -7,7 +7,7 @@
 :closed_book: generator bookmark form the directory
 
 You can quickly generate a directory page.
-For example, there are many HTML pages in the folder, use bookmark build `index.html`, Then in gh-pages use it
+For example, there are many HTML pages in the folder, use bookmark build your `index.html`, Then in gh-pages use it
 
 ## Installation
 
