@@ -24,7 +24,7 @@ $ [bm | bookmark] <command>
 ## Example
 
 ```
-bm -d /path/to/xx -o /page/to/xx -p './publicPath'
+bm -d /path/to/xx -o /page/to/xx/index.html -p ./publicPath
 ```
 
 ## Commands
