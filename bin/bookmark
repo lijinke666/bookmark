@@ -3,7 +3,7 @@
 
 const path = require('path');
 const program = require('commander');
-const { version, description } = require('../package.json');
+const { version } = require('../package.json');
 const { createBookmark } = require('../lib');
 
 process.env.NODE_PATH = path.resolve(__dirname, '/../node_modules/');
@@ -11,15 +11,17 @@ process.env.NODE_PATH = path.resolve(__dirname, '/../node_modules/');
 program
   .version(version, '-v, --version')
   .usage('[options]')
-  .option('-d --directory [value]', 'entry directory',__dirname)
-  .option('-o --output [value]', 'output directory', path.resolve(__dirname,'index.html'))
-  .option('-p --publicPath [value]', 'output public path', '..')
+  .option('-d --directory [value]', 'Entry directory', process.cwd())
+  .option('-o --output [value]', 'Output directory', path.join(process.cwd(), 'index.html'))
+  .option('-p --publicPath [value]', 'Output public path')
+  .option('-i --ignore [value]', 'Add a pattern or an array of glob patterns to exclude matches', '**/node_modules/**')
   .parse(process.argv);
 
-const { directory, publicPath,output } = program;
+const { directory, publicPath, output, ignore } = program;
 
 createBookmark({
   entry: directory,
   output,
-  publicPath
+  publicPath,
+  ignore
 });

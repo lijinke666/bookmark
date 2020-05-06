@@ -1,6 +1,4 @@
 const path = require('path');
-const fs = require('fs');
-const assert = require('assert');
 const coffee = require('coffee');
 const { version } = require('../package.json');
 const bookmark = path.resolve(__dirname, '../bin/bookmark');
@@ -30,8 +28,23 @@ describe('bookmark Commands Tests', () => {
         .expect('stdout', /index\.html/i)
         .end(done);
 
-      const p = path.join(__dirname, '../bin');
-      assert(fs.existsSync(path.join(p, 'index.html')));
+    });
+
+    it(`shout generator custom output file`, (done) => {
+      coffee
+        .fork(bookmark,['-o test.html'])
+        .expect('code', 0)
+        .expect('stdout', /test\.html/i)
+        .end(done);
+
+    });
+
+    it(`shout generator custom public path`, (done) => {
+      coffee
+        .fork(bookmark,['-p /public'])
+        .expect('code', 0)
+        .expect('stdout', /\/public/i)
+        .end(done);
     });
   });
 });

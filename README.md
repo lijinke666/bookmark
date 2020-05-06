@@ -11,35 +11,94 @@ For example, there are many HTML pages in the folder, use bookmark build your `i
 
 ## Installation
 
-```
-npm install j-bookmark -g
+```bash
+yarn global add j-bookmark
+// npm install j-bookmark -g
 ```
 
 ## Usage
 
-```
-$ [bm | bookmark] <command>
+```bash
+[bm | bookmark] <command>
 ```
 
 ## Example
 
+```js
+src
+├── test
+│   └── a.html
+└── test.html
 ```
-bm -d /path/to/xx -o /page/to/xx/index.html -p ./publicPath
+
+```bash
+bm -d /path/to/xx -o /page/to/xx -p /path
+```
+
+```bash
+$ bm -d src
+
+# output
+<ul>
+  <li>
+    <a href="src/test.html" target="_blank">1. test.html</a>
+  </li>
+  <li>
+    <a href="src/test/a.html" target="_blank">2. a.html</a>
+  </li>
+</ul>
+```
+
+```bash
+$ bm -d src -p /prefix
+
+# output
+<ul>
+  <li>
+    <a href="/prefix/test.html" target="_blank">1. test.html</a>
+  </li>
+  <li>
+    <a href="/prefix/test/a.html" target="_blank">2. a.html</a>
+  </li>
+</ul>
+```
+
+```bash
+$ bm -d src --ignore **/test/**
+
+# output
+<ul>
+  <li>
+    <a href="test.html" target="_blank">1. test.html</a>
+  </li>
+</ul>
+```
+
+```bash
+$ bm -d src -o output.html
+
+# output
+
+├── output.html
+├── test
+│   └── a.html
+└── test.html
 ```
 
 ## Commands
 
 ```bash
   -v, --version            output the version number
-  -d --directory [value]   entry directory 
-  -o --output [value]      output directory 
+  -d --directory [value]   entry directory
+  -o --output [value]      output directory
   -p --publicPath [value]  output public path (default: ..)
+  -i --ignore [value]      Add a pattern or an array of glob patterns to exclude matches (default: node_modules) //https://github.com/isaacs/node-glob#options
   -h, --help               output usage information
 ```
 
 ## Development
 
-```
+```bash
 git clone https://github.com/lijinke666/bookmark.git
 npm install | yarn
 npm link
@@ -47,7 +106,7 @@ npm link
 
 ## Test Case
 
-```
+```bash
 npm run test
 ```
 

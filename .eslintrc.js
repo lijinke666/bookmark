@@ -5,7 +5,7 @@ module.exports = {
         impliedStrict: true,
       },
     },
-    extends: ["eslint:recommended", "prettier"],
+    extends: ["eslint:recommended"],
     env: {
       es6: true,
       node: true,
@@ -20,7 +20,7 @@ module.exports = {
       "no-console": "off",
       "no-lonely-if": "error",
       "no-loop-func": "error",
-      "no-param-reassign": "error",
+      "no-param-reassign": 0,
       "no-sequences": "error",
       "no-shadow-restricted-names": "error",
       "no-unneeded-ternary": "error",
