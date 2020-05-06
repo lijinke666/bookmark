@@ -1,8 +1,8 @@
 # bookmark
 
-[![npm](https://img.shields.io/npm/dm/j-bookmask.svg?style=flat-square)](https://www.npmjs.com/package/j-bookmask)
-[![npm version](https://img.shields.io/npm/v/j-bookmask.svg?style=flat-square)](https://badge.fury.io/js/j-bookmask)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://www.npmjs.com/package/j-bookmask)
+[![npm](https://img.shields.io/npm/dm/j-bookmark.svg?style=flat-square)](https://www.npmjs.com/package/j-bookmark)
+[![npm version](https://img.shields.io/npm/v/j-bookmark.svg?style=flat-square)](https://badge.fury.io/js/j-bookmark)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://www.npmjs.com/package/j-bookmark)
 
 :closed_book: generator bookmark form the directory
 
