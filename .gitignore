@@ -9,6 +9,8 @@ yarn-error.log*
 lib/*.html
 **/index.html
 **/test.html
+index.html
+tests/**/index.html
 
 # Runtime data
 pids
