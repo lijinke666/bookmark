@@ -21,7 +21,7 @@ describe('bookmark Commands Tests', () => {
     });
   });
   describe('# bookmark',() => {
-    it(`shout generator index.html`, (done) => {
+    it(`should generator index.html`, (done) => {
       coffee
         .fork(bookmark)
         .expect('code', 0)
@@ -30,20 +30,27 @@ describe('bookmark Commands Tests', () => {
 
     });
 
-    it(`shout generator custom output file`, (done) => {
+    it(`should generator custom output file`, (done) => {
       coffee
         .fork(bookmark,['-o test.html'])
         .expect('code', 0)
         .expect('stdout', /test\.html/i)
         .end(done);
-
     });
 
-    it(`shout generator custom public path`, (done) => {
+    it(`should generator custom public path`, (done) => {
       coffee
         .fork(bookmark,['-p /public'])
         .expect('code', 0)
         .expect('stdout', /\/public/i)
+        .end(done);
+    });
+
+    it(`should disabled animate`, (done) => {
+      coffee
+        .fork(bookmark,['--disableAnimate'])
+        .expect('code', 0)
+        .notExpect('stdout', /@keyframes/i)
         .end(done);
     });
   });

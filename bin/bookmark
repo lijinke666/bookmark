@@ -15,13 +15,15 @@ program
   .option('-o --output [value]', 'Output directory', path.join(process.cwd(), 'index.html'))
   .option('-p --publicPath [value]', 'Output public path')
   .option('-i --ignore [value]', 'Add a pattern or an array of glob patterns to exclude matches', '**/node_modules/**')
+  .option('--disableAnimate', 'Disable bookmark animate', false)
   .parse(process.argv);
 
-const { directory, publicPath, output, ignore } = program;
+const { directory, publicPath, output, ignore, disableAnimate } = program;
 
 createBookmark({
   entry: directory,
   output,
   publicPath,
-  ignore
+  ignore,
+  disableAnimate
 });

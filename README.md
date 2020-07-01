@@ -89,11 +89,12 @@ $ bm -d src -o output.html
 
 ```bash
   -v, --version            output the version number
-  -d --directory [value]   entry directory
-  -o --output [value]      output directory
-  -p --publicPath [value]  output public path (default: ..)
+  -d --directory [value]   entry directory (default: process.cwd())
+  -o --output [value]      output directory (default: process.cwd() + index.html)
+  -p --publicPath [value]  output public path (default: '')
   -i --ignore [value]      Add a pattern or an array of glob patterns to exclude matches (default: node_modules) //https://github.com/isaacs/node-glob#options
   -h, --help               output usage information
+  --disableAnimate         Disable bookmark animate (default: false)
 ```
 
 ## Development
